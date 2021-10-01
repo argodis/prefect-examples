@@ -7,6 +7,7 @@ import time
 @task
 def say_hello():
     logger = prefect.context.get("logger")
+    print(os.getenv('username'))
     logger.info(f"Hello, {os.getenv('username')}!")
 
 with Flow("hello-flow-git-with-env-var") as flow:
